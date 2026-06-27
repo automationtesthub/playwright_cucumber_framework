@@ -1,14 +1,15 @@
 
+@all
 Feature: login functionality
 
 Background:
  Given the user is on the login page
 
-  Scenario: successful login    
+  Scenario: verify_valid_login_TC03    
     When the user enters valid credentials
     Then the user should be redirected to the dashboard
 
-  Scenario: unsuccessful login with invalid credentials    
+  Scenario: verify_invalid_login_TC02    
     When the user enters invalid credentials
     Then an error message should be displayed
 
