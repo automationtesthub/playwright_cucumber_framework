@@ -1,0 +1,97 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "lead-functionality;verify_create_lead_with_mandatory_fields_tc04",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "verify_create_lead_with_mandatory_fields_TC04",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1221129299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "src\\step-definitions\\login.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 676999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user enters valid credentials",
+            "match": {
+              "location": "src\\step-definitions\\login.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 801372600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "the user click on new lead link",
+            "match": {
+              "location": "src\\step-definitions\\lead.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 394983599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "fill the mandatory fields and click on save button",
+            "match": {
+              "location": "src\\step-definitions\\lead.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1005611800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 348112500
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@lead",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "lead-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "lead functionality",
+    "tags": [],
+    "uri": "features\\lead.feature"
+  }
+]

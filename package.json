@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js",
+    "leads": "cucumber-js --tags=@lead",
+    "report": "ts-node report.ts",
+    "test:report": "npm run test && npm run report",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open allure-report",
+    "allure": "cucumber-js && allure generate allure-results --clean && allure open allure-report"
+    
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,6 +21,10 @@
     "@cucumber/cucumber": "^13.0.0",
     "@playwright/test": "^1.61.0",
     "@types/node": "^26.0.0",
+    "allure-commandline": "^2.43.0",
+    "allure-cucumberjs": "^3.10.2",
+    "allure-js-commons": "^3.10.2",
+    "multiple-cucumber-html-reporter": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   },

@@ -10,7 +10,7 @@ export class LeadPage {
 
   loc_tb_lastname = "//input[@name='lastname']";
   loc_tb_company = "//input[@name='company']";
-  loc_btn_save = "//input[@name='button']";
+  loc_btn_save = "//input[@name='button123']";
   loc_txt_lastname = "//td[text()='Last Name:']/following::td[1]";
   loc_txt_company = "//td[text()='Company:']/following::td[1]";
     

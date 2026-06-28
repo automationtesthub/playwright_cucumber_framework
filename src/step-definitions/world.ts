@@ -7,7 +7,7 @@ import { HomePage } from '../pages/homePage';
 ////let page: Page;
 //let browser: Browser;
 
-import { Before, After, BeforeAll } from '@cucumber/cucumber';
+import { Before, After, BeforeAll,Status } from '@cucumber/cucumber';
 import { LeadPage } from '../pages/leadPage';
 import { loadExcel, getExcelDataByTC } from '../utilities/excelReader';
 
@@ -32,7 +32,13 @@ loadExcel('src/testdata/data.xlsx', 'data');
 Before(async function (scenario) {
   
     this.TCName = scenario.pickle.name;
+    try{
     this.data = await getExcelDataByTC(this.TCName);
+    }catch(e)
+    {
+         console.error(e);
+    }
+    
     console.log("Scenario Name:", scenario.pickle.name);
      this.browser = await chromium.launch({
          channel: 'chrome', // Launch Google Chrome
@@ -48,7 +54,15 @@ Before(async function (scenario) {
       this.leadpage = new LeadPage(this.page);
 });
 
-After(async function () {
+After(async function ({result}) {
+
+     if (result?.status === Status.FAILED) {
+    const screenshot = await this.page.screenshot({
+      fullPage: true
+    });
+
+    await this.attach(screenshot, "image/png");
+  }
     await this.page.close();
     await this.context.close();
     await this.browser.close();
