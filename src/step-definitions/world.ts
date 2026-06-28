@@ -1,4 +1,5 @@
 import { Browser, chromium, expect,Page } from '@playwright/test';
+import {BrowserManager} from "../utilities/BrowserManager";
 
 import { LoginPage } from '../pages/loginPage';
 import { HomePage } from '../pages/homePage';
@@ -40,10 +41,11 @@ Before(async function (scenario) {
     }
     
     console.log("Scenario Name:", scenario.pickle.name);
-     this.browser = await chromium.launch({
-         channel: 'chrome', // Launch Google Chrome
-         headless: false
-    });
+    //  this.browser = await chromium.launch({
+    //      channel: 'chrome', // Launch Google Chrome
+    //      headless: false
+    // });
+     this.browser = await BrowserManager.getBrowser();
 
     this.context = await this.browser.newContext();
 

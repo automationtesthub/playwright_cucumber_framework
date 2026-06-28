@@ -10,8 +10,10 @@
     "test:report": "npm run test && npm run report",
     "allure:generate": "allure generate allure-results --clean",
     "allure:open": "allure open allure-report",
-    "allure": "cucumber-js && allure generate allure-results --clean && allure open allure-report"
-    
+    "allure": "cucumber-js && allure generate allure-results --clean && allure open allure-report",
+    "chrome": "cross-env BROWSER=chrome cucumber-js",
+    "firefox": "cross-env BROWSER=firefox cucumber-js",
+    "edge": "cross-env BROWSER=edge cucumber-js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +26,7 @@
     "allure-commandline": "^2.43.0",
     "allure-cucumberjs": "^3.10.2",
     "allure-js-commons": "^3.10.2",
+    "cross-env": "^10.1.0",
     "multiple-cucumber-html-reporter": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
